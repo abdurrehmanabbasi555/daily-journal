@@ -1,0 +1,21 @@
+
+<%- include('partials/header.ejs') %>
+<!-- we need to add this path so that we can link & use our header n footer in our ejs file thats now moved into seperate folder named 'partials' which is common practice in nodejs -->
+
+<h1>Home</h1>
+<p>
+    <%= homeContent %>
+</p>
+<% posts.forEach(function(postContent) { %>
+<h1><%= postContent.title %></h1>
+<p class="text-truncate">
+    <%= postContent.body %> 
+</p>
+<div class="read-btn text-end">
+<a  class="btn rounded-5 " href="posts/<%= postContent.title%>"><i class="fa-solid fa-arrow-right"></i> Read More</a>
+</div>
+<% }); %>
+
+<%- include('partials/footer.ejs') %>
+
+

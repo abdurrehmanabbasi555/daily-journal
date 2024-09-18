@@ -1,0 +1,16 @@
+
+<%- include('partials/header.ejs') %>
+<!-- we need to add this path so that we can link & use our header n footer in our ejs file thats now moved into seperate folder named 'partials' which is common practice in nodejs -->
+
+<h1>Compose</h1>
+<form action="/compose" method="post">
+    <label for="composeText" class="form-label">Title</label>
+    <input type="text" name="composeTitle" class="w-100">
+    
+    <label for="postText" class="form-label">Post</label>
+     <textarea class="form-control postText" name="composeContent"></textarea> 
+     <button type="submit" name="button" class="btn btn-dark mt-4">Publish</button><!--in order to get any type of form data to console.log we need it to be in a 'button tag' with type=submit and no href attributes needed & anchor tag will not work -->
+    </form>
+<%- include('partials/footer.ejs') %>
+
+
